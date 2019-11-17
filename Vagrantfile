@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   sudo apt-get update
   sudo apt-get upgrade -y
   sudo apt-get -y install mc tree curl
-  sudo curl -fsSl https://get.docker.com/ | sh
+  sudo curl -fsSL https://get.docker.com/ | sh
   SCRIPT
 
   config.vm.provision "shell", inline: $script
