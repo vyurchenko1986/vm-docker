@@ -21,9 +21,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   sudo apt-get update
   sudo apt-get upgrade -y
   sudo apt-get -y install mc tree curl
-  sudo curl -sSL https://get.docker.com/ | sh
+  sudo curl -sSL https://get.docker.com/ | sh > /dev/null 2>&1
   sudo docker --version
-  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose > /dev/null 2>&1
   sudo chmod +x /usr/local/bin/docker-compose
   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
   sudo docker-compose --version
