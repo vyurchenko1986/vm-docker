@@ -27,6 +27,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   sudo chmod +x /usr/local/bin/docker-compose
   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
   sudo docker-compose --version
+  sudo usermod -a -G docker vagrant && sudo su vagrant
+  sudo usermod -a -G dialout vagrant
+  sudo reboot
   SCRIPT
 
   config.vm.provision "shell", inline: $script
